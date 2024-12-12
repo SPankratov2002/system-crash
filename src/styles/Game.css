@@ -1,0 +1,73 @@
+/* Игровое поле */
+.game-field-console {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Точки */
+.dot-console {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #00ff00 40%, transparent);
+    border: 2px solid #00ff00;
+    border-radius: 50%;
+    animation: flicker-dot 1.5s infinite ease-in-out, fadeOutConsole 3s linear forwards;
+    cursor: pointer;
+}
+
+.text-glitch-2 {
+    margin-top: 2rem;
+    font-size: 1.2rem !important;
+    word-wrap: break-word;
+    user-select: none;
+    position: relative;
+    color: #009900;
+    text-shadow: 0px 0px 20px #003300;
+    transform: perspective(500px) rotateX(25deg) translateZ(0px);
+    transform-origin: center;
+    margin-inline: 2rem;
+}
+
+/* Анимации */
+@keyframes fadeOutConsole {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+
+
+@keyframes flicker-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
