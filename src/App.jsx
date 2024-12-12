@@ -15,6 +15,17 @@ function App() {
     missed: 0,
   });
 
+  useEffect(() => {
+    const tg = window.Telegram.WebApp;
+    tg.MainButton.setParams({ is_visible: false });
+
+    // Сообщаем Telegram, что приложение готово
+    tg.ready();
+
+    console.log("Telegram WebApp Initialized");
+    setTg(telegram); // Сохраняем Telegram объект в состоянии
+  }, []);
+
   const startGame = (selectedLevel) => {
     setLevel(selectedLevel);
     setStage("game");
